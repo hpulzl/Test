@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="qb.mapper.QusandtestMapper" >
+  <resultMap id="BaseResultMap" type="qb.entity.Qusandtest" >
+    <id column="qtid" property="qtid" jdbcType="VARCHAR" />
+    <result column="qusid" property="qusid" jdbcType="VARCHAR" />
+    <result column="testid" property="testid" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    qtid, qusid, testid
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="qb.entity.QusandtestExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from qusandtest
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from qusandtest
+    where qtid = #{qtid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from qusandtest
+    where qtid = #{qtid,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="qb.entity.QusandtestExample" >
+    delete from qusandtest
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="qb.entity.Qusandtest" >
+    insert into qusandtest (qtid, qusid, testid
+      )
+    values (#{qtid,jdbcType=VARCHAR}, #{qusid,jdbcType=VARCHAR}, #{testid,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="qb.entity.Qusandtest" >
+    insert into qusandtest
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="qtid != null" >
+        qtid,
+      </if>
+      <if test="qusid != null" >
+        qusid,
+      </if>
+      <if test="testid != null" >
+        testid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="qtid != null" >
+        #{qtid,jdbcType=VARCHAR},
+      </if>
+      <if test="qusid != null" >
+        #{qusid,jdbcType=VARCHAR},
+      </if>
+      <if test="testid != null" >
+        #{testid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="qb.entity.QusandtestExample" resultType="java.lang.Integer" >
+    select count(*) from qusandtest
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update qusandtest
+    <set >
+      <if test="record.qtid != null" >
+        qtid = #{record.qtid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.qusid != null" >
+        qusid = #{record.qusid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.testid != null" >
+        testid = #{record.testid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update qusandtest
+    set qtid = #{record.qtid,jdbcType=VARCHAR},
+      qusid = #{record.qusid,jdbcType=VARCHAR},
+      testid = #{record.testid,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="qb.entity.Qusandtest" >
+    update qusandtest
+    <set >
+      <if test="qusid != null" >
+        qusid = #{qusid,jdbcType=VARCHAR},
+      </if>
+      <if test="testid != null" >
+        testid = #{testid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where qtid = #{qtid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="qb.entity.Qusandtest" >
+    update qusandtest
+    set qusid = #{qusid,jdbcType=VARCHAR},
+      testid = #{testid,jdbcType=VARCHAR}
+    where qtid = #{qtid,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByTestid" resultType="java.lang.String" parameterType="java.lang.String" >
+    select 
+    qusid
+    from qusandtest
+    where testid = #{testid,jdbcType=VARCHAR}
+  </select>
+</mapper>

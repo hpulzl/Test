@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AdminLoginSer</servlet-name>
+    <servlet-class>qb.servlet.AdminLoginSer</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TestPaperSer</servlet-name>
+    <servlet-class>qb.servlet.TestPaperSer</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AdminDelSer</servlet-name>
+    <servlet-class>qb.servlet.AdminDelSer</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AdminUpdateTestSer</servlet-name>
+    <servlet-class>qb.servlet.AdminUpdateTestSer</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AdminUpdateSer</servlet-name>
+    <servlet-class>qb.servlet.AdminUpdateSer</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AdminAddTestpaperSer</servlet-name>
+    <servlet-class>qb.servlet.AdminAddTestpaperSer</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddQusbankSer</servlet-name>
+    <servlet-class>qb.servlet.AddQusbankSer</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SelectQusbankSer</servlet-name>
+    <servlet-class>qb.servlet.SelectQusbankSer</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DelQusbankSer</servlet-name>
+    <servlet-class>qb.servlet.DelQusbankSer</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UpdateQusbankSer</servlet-name>
+    <servlet-class>qb.servlet.UpdateQusbankSer</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ToUpdateQusbankSer</servlet-name>
+    <servlet-class>qb.servlet.ToUpdateQusbankSer</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CreateTestPaperSer</servlet-name>
+    <servlet-class>qb.servlet.CreateTestPaperSer</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>selectQusandTestSer</servlet-name>
+    <servlet-class>qb.servlet.selectQusandTestSer</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DelCreateTestpaperSer</servlet-name>
+    <servlet-class>qb.servlet.DelCreateTestpaperSer</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UserLoginSer</servlet-name>
+    <servlet-class>qb.android.servlet.UserLoginSer</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SuperServlet</servlet-name>
+    <servlet-class>qb.android.servlet.SuperServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UserRegisterSer</servlet-name>
+    <servlet-class>qb.android.servlet.UserRegisterSer</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SelectUserSer</servlet-name>
+    <servlet-class>qb.android.servlet.SelectUserSer</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SelectAllTestPaperSer</servlet-name>
+    <servlet-class>qb.android.servlet.SelectAllTestPaperSer</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TotalTestPaperSer</servlet-name>
+    <servlet-class>qb.android.servlet.TotalTestPaperSer</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SelectQusByTestidSer</servlet-name>
+    <servlet-class>qb.android.servlet.SelectQusByTestidSer</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SaveWrongQusSer</servlet-name>
+    <servlet-class>qb.android.servlet.SaveWrongQusSer</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SelectWrongQusSer</servlet-name>
+    <servlet-class>qb.android.servlet.SelectWrongQusSer</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>AdminLoginSer</servlet-name>
+    <url-pattern>/AdminLoginSer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TestPaperSer</servlet-name>
+    <url-pattern>/TestPaperSer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminDelSer</servlet-name>
+    <url-pattern>/AdminDelSer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminUpdateTestSer</servlet-name>
+    <url-pattern>/AdminUpdateTestSer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminUpdateSer</servlet-name>
+    <url-pattern>/AdminUpdateSer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminAddTestpaperSer</servlet-name>
+    <url-pattern>/AdminAddTestpaperSer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddQusbankSer</servlet-name>
+    <url-pattern>/AddQusbankSer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SelectQusbankSer</servlet-name>
+    <url-pattern>/SelectQusbankSer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelQusbankSer</servlet-name>
+    <url-pattern>/DelQusbankSer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateQusbankSer</servlet-name>
+    <url-pattern>/UpdateQusbankSer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ToUpdateQusbankSer</servlet-name>
+    <url-pattern>/ToUpdateQusbankSer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CreateTestPaperSer</servlet-name>
+    <url-pattern>/CreateTestPaperSer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>selectQusandTestSer</servlet-name>
+    <url-pattern>/selectQusandTestSer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelCreateTestpaperSer</servlet-name>
+    <url-pattern>/DelCreateTestpaperSer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserLoginSer</servlet-name>
+    <url-pattern>/UserLoginSer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SuperServlet</servlet-name>
+    <url-pattern>/SuperServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserRegisterSer</servlet-name>
+    <url-pattern>/UserRegisterSer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SelectUserSer</servlet-name>
+    <url-pattern>/SelectUserSer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SelectAllTestPaperSer</servlet-name>
+    <url-pattern>/SelectAllTestPaperSer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TotalTestPaperSer</servlet-name>
+    <url-pattern>/TotalTestPaperSer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SelectQusByTestidSer</servlet-name>
+    <url-pattern>/SelectQusByTestidSer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SaveWrongQusSer</servlet-name>
+    <url-pattern>/SaveWrongQusSer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SelectWrongQusSer</servlet-name>
+    <url-pattern>/SelectWrongQusSer</url-pattern>
+  </servlet-mapping><!--
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+--></web-app>

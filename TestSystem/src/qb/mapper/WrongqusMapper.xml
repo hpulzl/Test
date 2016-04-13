@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="qb.mapper.WrongqusMapper" >
+  <resultMap id="BaseResultMap" type="qb.entity.Wrongqus" >
+    <id column="wqid" property="wqid" jdbcType="VARCHAR" />
+    <result column="userid" property="userid" jdbcType="VARCHAR" />
+    <result column="qusid" property="qusid" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    wqid, userid, qusid
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="qb.entity.WrongqusExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from wrongqus
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from wrongqus
+    where wqid = #{wqid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from wrongqus
+    where wqid = #{wqid,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="qb.entity.WrongqusExample" >
+    delete from wrongqus
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="qb.entity.Wrongqus" >
+    insert into wrongqus (wqid, userid, qusid
+      )
+    values (#{wqid,jdbcType=VARCHAR}, #{userid,jdbcType=VARCHAR}, #{qusid,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="qb.entity.Wrongqus" >
+    insert into wrongqus
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="wqid != null" >
+        wqid,
+      </if>
+      <if test="userid != null" >
+        userid,
+      </if>
+      <if test="qusid != null" >
+        qusid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="wqid != null" >
+        #{wqid,jdbcType=VARCHAR},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="qusid != null" >
+        #{qusid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="qb.entity.WrongqusExample" resultType="java.lang.Integer" >
+    select count(*) from wrongqus
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update wrongqus
+    <set >
+      <if test="record.wqid != null" >
+        wqid = #{record.wqid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userid != null" >
+        userid = #{record.userid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.qusid != null" >
+        qusid = #{record.qusid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update wrongqus
+    set wqid = #{record.wqid,jdbcType=VARCHAR},
+      userid = #{record.userid,jdbcType=VARCHAR},
+      qusid = #{record.qusid,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="qb.entity.Wrongqus" >
+    update wrongqus
+    <set >
+      <if test="userid != null" >
+        userid = #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="qusid != null" >
+        qusid = #{qusid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where wqid = #{wqid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="qb.entity.Wrongqus" >
+    update wrongqus
+    set userid = #{userid,jdbcType=VARCHAR},
+      qusid = #{qusid,jdbcType=VARCHAR}
+    where wqid = #{wqid,jdbcType=VARCHAR}
+  </update>
+</mapper>

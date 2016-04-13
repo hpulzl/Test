@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="问题:"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/id"
+        android:textColor="@color/black"
+        android:textSize="18sp"/>
+
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_below="@id/question"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+        <CheckBox
+            android:id="@+id/single_option_A"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"/>
+
+        <CheckBox
+            android:id="@+id/single_option_B"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"/>
+
+
+        <CheckBox
+            android:id="@+id/single_option_C"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"/>
+
+        <CheckBox
+            android:id="@+id/single_option_D"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+</RelativeLayout>

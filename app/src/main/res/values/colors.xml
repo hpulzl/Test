@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="transparent">#00000000</color>
+    <color name="base_color_text_white">#ffffff</color>
+    <color name="base_color_text_gray">#9fa0a0</color>
+    <color name="color_theme">#489cfa</color>
+    <color name="theme_bg_color">#f0f2f5</color>
+    <color name="base_color_text_black">#3e3e39</color>
+    <color name="grey700">#616161</color>
+    <!--文字的颜色-->
+    <color name="black">#030303</color>
+    <color name="white">#fafafa</color>
+</resources>

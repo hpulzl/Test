@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 别名的定义 -->
+	<typeAliases>
+	 <!-- 批量定义别名
+	     package：指定po类的包名路径，mybatis会自动扫描该包下面的所有的类，我们在配置文件中可以使用
+	     java类中所定义的类名(首字母大小写都可以)
+	  -->
+	 <package name="qb.entity"></package>
+	</typeAliases>
+</configuration>

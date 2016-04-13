@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/theme_bg_color"
+    tools:context="qb.edu.com.testsystem.activity.RegisterActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="75dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/input_bg"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/username"
+                    android:layout_width="fill_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/transparent"
+                    android:drawableLeft="@drawable/login_icon_account"
+                    android:drawablePadding="25dip"
+                    android:hint="用户号"
+                    android:paddingLeft="15dip"
+                    android:shadowDx="0.0"
+                    android:shadowDy="1.0"
+                    android:shadowRadius="1.0"
+                    android:textColorHint="#ffdddddd" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@drawable/base_horization_line" />
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="fill_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/transparent"
+                    android:drawableLeft="@drawable/login_icon_password"
+                    android:drawablePadding="25dip"
+                    android:hint="密码"
+                    android:inputType="textPassword"
+                    android:paddingLeft="15dip"
+                    android:textColorHint="#ffdddddd" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@drawable/base_horization_line" />
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/transparent"
+                    android:paddingLeft="15dip" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Smile.TextView._Black"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/black"
+                        android:text="姓名" />
+
+                    <EditText
+                        android:id="@+id/register_name"
+                        android:layout_width="fill_parent"
+                        android:layout_height="48dp"
+                        android:background="@color/transparent"
+                        android:drawablePadding="25dip"
+                        android:paddingLeft="15dip"
+                        android:textColorHint="#ffdddddd" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@drawable/base_horization_line" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/transparent"
+                    android:paddingLeft="15dip" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Smile.TextView._Black"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/black"
+                        android:text="班级" />
+
+                    <EditText
+                        android:id="@+id/register_class"
+                        android:layout_width="fill_parent"
+                        android:layout_height="48dp"
+                        android:background="@color/transparent"
+                        android:drawablePadding="25dip"
+                        android:paddingLeft="15dip"
+                        android:textColorHint="#ffdddddd" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <Button
+                android:id="@+id/register"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/btn_login_selector"
+                android:gravity="center"
+                android:text="注册"
+                android:textColor="@color/base_color_text_white"
+                android:textSize="@dimen/text_size_large" />
+        </LinearLayout>
+
+</RelativeLayout>

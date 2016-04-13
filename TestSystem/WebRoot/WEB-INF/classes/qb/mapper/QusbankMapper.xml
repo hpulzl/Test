@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="qb.mapper.QusbankMapper" >
+  <resultMap id="BaseResultMap" type="qb.entity.Qusbank" >
+    <id column="qusid" property="qusid" jdbcType="VARCHAR" />
+    <result column="qustype" property="qustype" jdbcType="VARCHAR" />
+    <result column="qusanswer" property="qusanswer" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="qb.entity.Qusbank" extends="BaseResultMap" >
+    <result column="qusissue" property="qusissue" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    qusid, qustype, qusanswer
+  </sql>
+  <sql id="Blob_Column_List" >
+    qusissue
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="qb.entity.QusbankExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from qusbank
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="qb.entity.QusbankExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from qusbank
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <include refid="myRowBoundsSQL"/>
+  </select>
+  <sql id="myRowBoundsSQL">
+	    <if test="rowBounds != null">
+	        limit ${rowBounds.offset}, ${rowBounds.limit}
+	    </if>
+    </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from qusbank
+    where qusid = #{qusid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from qusbank
+    where qusid = #{qusid,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="qb.entity.QusbankExample" >
+    delete from qusbank
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="qb.entity.Qusbank" >
+    insert into qusbank (qusid, qustype, qusanswer, 
+      qusissue)
+    values (#{qusid,jdbcType=VARCHAR}, #{qustype,jdbcType=VARCHAR}, #{qusanswer,jdbcType=VARCHAR}, 
+      #{qusissue,jdbcType=LONGVARCHAR});
+  </insert>
+  <insert id="insertSelective" parameterType="qb.entity.Qusbank" >
+    insert into qusbank
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="qusid != null" >
+        qusid,
+      </if>
+      <if test="qustype != null" >
+        qustype,
+      </if>
+      <if test="qusanswer != null" >
+        qusanswer,
+      </if>
+      <if test="qusissue != null" >
+        qusissue,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="qusid != null" >
+        #{qusid,jdbcType=VARCHAR},
+      </if>
+      <if test="qustype != null" >
+        #{qustype,jdbcType=VARCHAR},
+      </if>
+      <if test="qusanswer != null" >
+        #{qusanswer,jdbcType=VARCHAR},
+      </if>
+      <if test="qusissue != null" >
+        #{qusissue,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="qb.entity.QusbankExample" resultType="java.lang.Integer" >
+    select count(*) from qusbank
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update qusbank
+    <set >
+      <if test="record.qusid != null" >
+        qusid = #{record.qusid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.qustype != null" >
+        qustype = #{record.qustype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.qusanswer != null" >
+        qusanswer = #{record.qusanswer,jdbcType=VARCHAR},
+      </if>
+      <if test="record.qusissue != null" >
+        qusissue = #{record.qusissue,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update qusbank
+    set qusid = #{record.qusid,jdbcType=VARCHAR},
+      qustype = #{record.qustype,jdbcType=VARCHAR},
+      qusanswer = #{record.qusanswer,jdbcType=VARCHAR},
+      qusissue = #{record.qusissue,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update qusbank
+    set qusid = #{record.qusid,jdbcType=VARCHAR},
+      qustype = #{record.qustype,jdbcType=VARCHAR},
+      qusanswer = #{record.qusanswer,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="qb.entity.Qusbank" >
+    update qusbank
+    <set >
+      <if test="qustype != null" >
+        qustype = #{qustype,jdbcType=VARCHAR},
+      </if>
+      <if test="qusanswer != null" >
+        qusanswer = #{qusanswer,jdbcType=VARCHAR},
+      </if>
+      <if test="qusissue != null" >
+        qusissue = #{qusissue,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where qusid = #{qusid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="qb.entity.Qusbank" >
+    update qusbank
+    set qustype = #{qustype,jdbcType=VARCHAR},
+      qusanswer = #{qusanswer,jdbcType=VARCHAR},
+      qusissue = #{qusissue,jdbcType=LONGVARCHAR}
+    where qusid = #{qusid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="qb.entity.Qusbank" >
+    update qusbank
+    set qustype = #{qustype,jdbcType=VARCHAR},
+      qusanswer = #{qusanswer,jdbcType=VARCHAR}
+    where qusid = #{qusid,jdbcType=VARCHAR}
+  </update>
+</mapper>
